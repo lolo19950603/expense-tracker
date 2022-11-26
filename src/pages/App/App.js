@@ -3,9 +3,9 @@ import { Routes, Route } from 'react-router-dom';
 
 
 // Components
-import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import LoginPage from '../LoginPage/LoginPage';
+import SignupPage from '../SignupPage/SignupPage';
+import DailySummaryPage from '../DailySummaryPage/DailySummaryPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 // Helpers
@@ -18,17 +18,23 @@ export default function App() {
 
   return (
     <main className="App">
+      <h1>Expense Tracker</h1>
       { user ?
           <>
           <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
+              <Route path="/" element={<DailySummaryPage />} />
             </Routes>
           </>
           :
-          <AuthPage setUser={setUser}/>
+          <>
+            <Routes>
+              {/* Auth Route components in here */}
+              <Route path="/" element={<LoginPage setUser={setUser} />} />-
+              <Route path="/signup" element={<SignupPage setUser={setUser} />} />-
+            </Routes>
+          </>
       }
     </main>
   );
