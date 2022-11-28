@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SignUpForm from "../../components/SignUpForm/SignUpForm";
 
 export default function AuthPage({ setUser }) {
@@ -5,6 +6,7 @@ export default function AuthPage({ setUser }) {
     <section>
       <h1>Sign Up</h1>
       <SignUpForm setUser={setUser}/>
+      <Link to="/">Back to log in</Link>
     </section>
   );
 }

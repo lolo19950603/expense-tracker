@@ -28,6 +28,42 @@
   color: #61dafb;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 5px solid black;
+  align-items: center;
+  align-content: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding-bottom: 5px;
+  transition: 0.3s;
+}
+
+.menu-item {
+  text-decoration: none;
+  color: white;
+  padding-bottom: 5px;
+}
+
+.btn {
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: black;
+  border-radius: 10%;
+  color: white;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

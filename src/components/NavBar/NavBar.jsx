@@ -1,17 +1,31 @@
-import { Link } from 'react-router-dom';
-import * as userService from '../../utilities/services/users'
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export default function NavBar({ user, setUser }) {
-  function handleLogOut(){
-    userService.logOut()
-    setUser(null)
-  }
+// images
+import logo from "../../img/logo.jpg";
+
+export default function NavBar({ user, menuClick, setMenuClick }) {
 
   return (
     <nav>
-      &nbsp; &nbsp; <span className="name">Hey there {user.name}!</span>
-      &nbsp; &nbsp; <Link to="" onClick={handleLogOut}>Log Out</Link>
-
+      {user ? (
+        <>
+          <Link onClick={()=>setMenuClick(false)} to="/"><img src={logo} alt="logo" width="50" /></Link>
+          {menuClick ? (
+            <>
+              <button onClick={()=>setMenuClick(false)} class="btn material-symbols-outlined">close</button>
+            </>
+          ) : (
+            <>
+              <button onClick={()=>setMenuClick(true)} class="btn material-symbols-outlined">menu</button>
+            </>
+          )}
+        </>
+      ) : (
+        <>
+          <Link to="/"><img src={logo} alt="logo" width="50" /></Link>
+        </>
+      )}
     </nav>
   );
 }
