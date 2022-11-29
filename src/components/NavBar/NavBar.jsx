@@ -11,6 +11,14 @@ export default function NavBar({ user, menuClick, setMenuClick }) {
       {user ? (
         <>
           <Link onClick={()=>setMenuClick(false)} to="/"><img src={logo} alt="logo" width="50" /></Link>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span className="name">Welcome {user.name}!</span>
+          <span className="spending">Month's spending: $2000 </span>
           {menuClick ? (
             <>
               <button onClick={()=>setMenuClick(false)} class="btn material-symbols-outlined">close</button>

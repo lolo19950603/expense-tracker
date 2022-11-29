@@ -8,7 +8,7 @@ import background from "../../img/background.jpg";
 // Components
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../SignupPage/SignupPage";
-import DailySummaryPage from "../DailySummaryPage/DailySummaryPage";
+import AccountPage from "../AccountPage/AccountPage";
 import NavBar from "../../components/NavBar/NavBar";
 
 // Helpers
@@ -47,7 +47,7 @@ export default function App() {
           <>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<DailySummaryPage />} />
+              <Route path="/" element={<AccountPage />} />
             </Routes>
           </>
         ) : (
