@@ -1,5 +1,3 @@
-import { checkToken } from "../../utilities/services/users";
-
 import "./AccountPage.css";
 
 import DailySummary from '../../components/DailySummary/DailySummary'

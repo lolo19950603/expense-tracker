@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
 
 // images
-import background from "../../img/background.jpg";
+// import background from "../../img/background.jpg";
 
 // Components
 import LoginPage from "../LoginPage/LoginPage";
