@@ -18,6 +18,9 @@ import * as userService from "../../utilities/services/users";
 import "./App.css";
 
 export default function App() {
+  const current = new Date();
+  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+
   const [user, setUser] = useState(getUser());
 
   const [menuClick, setMenuClick] = useState(false);
@@ -28,10 +31,9 @@ export default function App() {
     setMenuClick(false);
   }
 
-
   return (
     <main className="App">
-      <NavBar user={user} menuClick={menuClick} setMenuClick={setMenuClick}/>
+      <NavBar month={current.getMonth()} user={user} menuClick={menuClick} setMenuClick={setMenuClick}/>
       {menuClick ? (
         <div className="menu">
           <Link className="menu-item" to="" onClick={handleLogOut}>Log Out</Link>
@@ -47,7 +49,7 @@ export default function App() {
           <>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<AccountPage />} />
+              <Route path="/" element={<AccountPage date={date}/>} />
             </Routes>
           </>
         ) : (
