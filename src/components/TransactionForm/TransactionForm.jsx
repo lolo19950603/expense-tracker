@@ -1,30 +1,31 @@
 import { useState } from 'react';
-import { login } from '../../utilities/services/users'
+import * as transactionsAPI from '../../utilities/api/transactions';
 
-const defaultState = {
-    description: '',
-    amount: 0,
-    date: null
-}
-
-export default function TransactionForm() {
+export default function TransactionForm({ user }) {
     const current = new Date();
     const today_date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     const [formData, setFormData] = useState({
+        user: user,
         description: '',
         amount: 0,
         date: today_date
     })
 
-    const { description, amount, date } = formData;
-
     const handleSubmit = async (e) => {
         // when we submit we basically just grab whatever we have in
         // the state.
         e.preventDefault();
-        const { description, amount, date } = formData;
-        const data = { description, amount, date };
-        console.log(formData);
+        try {
+            await transactionsAPI.create(formData);
+            setFormData({
+                user: user,
+                description: '',
+                amount: 0,
+                date: today_date
+            });
+        } catch (err) {
+            console.error(err);
+        }
     }
 
     function handleChange(evt) {
@@ -41,10 +42,10 @@ export default function TransactionForm() {
         <div className="form-container">
             <form onSubmit={handleSubmit} autoComplete="off">
                 <label htmlFor="login-email">description</label>
-                <input type="text" name="description" id="login-email" value={description} onChange={handleChange} required />
+                <input type="text" name="description" id="login-email" value={formData.description} onChange={handleChange} required />
 
                 <label htmlFor="login-password">amount</label>
-                <input type="number" name="amount" id="login-password" value={amount} onChange={handleChange} required />
+                <input type="number" name="amount" id="login-password" value={formData.amount} onChange={handleChange} required />
 
                 <button type="submit">Add</button>
             </form>

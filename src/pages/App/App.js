@@ -53,7 +53,7 @@ export default function App() {
           <>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<AccountPage date={date}/>} />
+              <Route path="/" element={<AccountPage user={user} date={date}/>} />
               <Route path="/year" element={<YearPage />} />
               <Route path="/month" element={<MonthPage />} />
             </Routes>

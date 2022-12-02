@@ -23,7 +23,6 @@ export function signUp(userData){
     // }else{
     //     throw new Error('Invalid Sign Up')
     // }
-
     return sendRequest(BASE_URL, "POST", userData, 'Invalid Sign Up')
 }
 
@@ -45,7 +44,6 @@ export function login(credentials) {
     // } else {
     //     throw new Error('Invalid Credentials')
     // }
-
     return sendRequest(`${BASE_URL}/login`, "POST", credentials, 'Invalid Credentials')
 }
 

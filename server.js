@@ -8,8 +8,6 @@ require('dotenv').config();
 // Connect to the database (after the dotenv)
 require('./config/database');
 
-const userRouter = require('./routes/api/users')
-
 const app = express();
 
 app.use(logger('dev'));
@@ -24,7 +22,10 @@ if( process.env.NODE_ENV === 'production'){
 app.use(require('./config/checkToken'))
 
 // API routes here
-app.use('/api/users', userRouter)
+app.use('/api/users', require('./routes/api/users'))
+
+const isLoggedIn = require('./config/isLoggedIn');
+app.use('/api/transactions', isLoggedIn, require('./routes/api/transactions'));
 
 // "Catch all" route
 app.get('/*', function(req, res) {

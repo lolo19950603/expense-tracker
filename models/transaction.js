@@ -1,9 +1,12 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
 const Schema = mongoose.Schema;
-const SALT_ROUNDS = 6;
 
 const transactionSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true
+      },
     description: { type: String, trim: true, required: true },
     amount: {
         type: Number,
@@ -15,7 +18,8 @@ const transactionSchema = new Schema({
         required: true
     }
 }, {
-    timestamps: true
+    timestamps: true,
+    toJSON: { virtuals: true }
 });
 
 module.exports = mongoose.model('transaction', transactionSchema);

@@ -5,15 +5,17 @@
 // import logo from "../../img/logo.jpg";
 
 // Components
+import TransactionIndex from '../TransactionIndex/TransactionIndex'
 import TransactionForm from '../TransactionForm/TransactionForm'
 
-export default function DailySummary({date}) {
+export default function DailySummary({user, date}) {
 
   return (
     <div className="daily-summary">
       <h2>{date}</h2>
       <h3>Daily Summary:</h3>
-      <TransactionForm />
+      <TransactionIndex user={user} />
+      <TransactionForm user={user} />
     </div>
   );
 }
