@@ -5,10 +5,14 @@ import { Routes, Route } from "react-router-dom";
 // images
 // import background from "../../img/background.jpg";
 
-// Components
+// Pages
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../SignupPage/SignupPage";
 import AccountPage from "../AccountPage/AccountPage";
+import YearPage from "../YearPage/YearPage";
+import MonthPage from "../MonthPage/MonthPage";
+
+// Components
 import NavBar from "../../components/NavBar/NavBar";
 
 // Helpers
@@ -50,6 +54,8 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<AccountPage date={date}/>} />
+              <Route path="/year" element={<YearPage />} />
+              <Route path="/month" element={<MonthPage />} />
             </Routes>
           </>
         ) : (

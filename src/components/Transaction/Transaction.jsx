@@ -12,7 +12,7 @@ export default function Calendar() {
         <span class="material-symbols-outlined">arrow_forward</span>
         <Link to="/month">month</Link>
         <span class="material-symbols-outlined">arrow_forward</span>
-        <Link to="/">day</Link>
+        <Link to="/day">day</Link>
     </div>
   );
 }
