@@ -9,9 +9,9 @@ export default function Calendar() {
   return (
     <div className="calendar">
         <Link to="/year">year</Link>
-        <span class="material-symbols-outlined">arrow_forward</span>
+        <span className="material-symbols-outlined">arrow_forward</span>
         <Link to="/month">month</Link>
-        <span class="material-symbols-outlined">arrow_forward</span>
+        <span className="material-symbols-outlined">arrow_forward</span>
         <Link to="/">day</Link>
     </div>
   );

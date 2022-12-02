@@ -15,13 +15,7 @@ const transactionSchema = new Schema({
         required: true
     }
 }, {
-    timestamps: true,
-    toJSON:{
-        transform: function(doc, ret){
-            delete ret.password
-            return ret
-        }
-    }
+    timestamps: true
 });
 
 module.exports = mongoose.model('transaction', transactionSchema);

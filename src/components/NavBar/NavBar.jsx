@@ -58,11 +58,11 @@ export default function NavBar({ month, user, menuClick, setMenuClick }) {
           <span className="spending">{getMonthText(month)}'s spending: $2000 </span>
           {menuClick ? (
             <>
-              <button onClick={()=>setMenuClick(false)} class="btn material-symbols-outlined">close</button>
+              <button onClick={()=>setMenuClick(false)} className="btn material-symbols-outlined">close</button>
             </>
           ) : (
             <>
-              <button onClick={()=>setMenuClick(true)} class="btn material-symbols-outlined">menu</button>
+              <button onClick={()=>setMenuClick(true)} className="btn material-symbols-outlined">menu</button>
             </>
           )}
         </>
