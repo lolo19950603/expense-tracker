@@ -1,20 +1,12 @@
-import { useState, useEffect, useRef } from 'react';
-import * as transactionsAPI from '../../utilities/api/transactions';
+import TransactionLineItem from '../TransactionLineItem/TransactionLineItem'
 
-export default function TransactionIndex({ user }) {
+export default function TransactionIndex({ transactions }) {
 
-  const [transactions, setTransactions] = useState([]);
-
-  useEffect(function() {
-    async function getItems() {
-      const transactions = await transactionsAPI.getAll();
-      setTransactions(transactions);
-    }
-    getItems();
-  }, []);
   return (
     <div className="daily-summary">
-      <h1>{transactions}</h1>
+      {transactions.map((transaction, idx) => (
+        <TransactionLineItem transaction={transaction} key={idx} />
+      ))}
     </div>
   );
 }

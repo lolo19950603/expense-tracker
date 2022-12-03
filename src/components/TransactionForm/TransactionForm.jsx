@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import * as transactionsAPI from '../../utilities/api/transactions';
 
-export default function TransactionForm({ user }) {
+export default function TransactionForm({ user, getTransactions }) {
     const current = new Date();
-    const today_date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
     const [formData, setFormData] = useState({
         user: user,
         description: '',
         amount: 0,
-        date: today_date
+        date: current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]
     })
 
     const handleSubmit = async (e) => {
@@ -16,13 +15,14 @@ export default function TransactionForm({ user }) {
         // the state.
         e.preventDefault();
         try {
-            await transactionsAPI.create(formData);
+            const {transaction} = await transactionsAPI.create(formData);
             setFormData({
                 user: user,
                 description: '',
                 amount: 0,
-                date: today_date
+                date: current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]
             });
+            getTransactions();
         } catch (err) {
             console.error(err);
         }
@@ -49,6 +49,7 @@ export default function TransactionForm({ user }) {
 
                 <button type="submit">Add</button>
             </form>
+
         </div>
     </div>
 }

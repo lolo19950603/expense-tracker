@@ -23,7 +23,6 @@ import "./App.css";
 
 export default function App() {
   const current = new Date();
-  const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
 
   const [user, setUser] = useState(getUser());
 
@@ -53,7 +52,7 @@ export default function App() {
           <>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<AccountPage user={user} date={date}/>} />
+              <Route path="/" element={<AccountPage user={user} date={current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]}/>} />
               <Route path="/year" element={<YearPage />} />
               <Route path="/month" element={<MonthPage />} />
             </Routes>
