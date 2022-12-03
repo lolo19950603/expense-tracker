@@ -43,11 +43,13 @@
 
 ### Built With
 
-- trello
-- github
-- visualstudio
-- javascript
-- react.js
+- MongoDB/Mongoose
+- Express
+- Trello
+- Github
+- Visual Studio
+- JavaScript
+- React.js
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
