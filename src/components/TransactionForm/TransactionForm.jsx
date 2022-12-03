@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as transactionsAPI from '../../utilities/api/transactions';
 
-export default function TransactionForm({ user, getTransactions, getTransactionsTotal }) {
+export default function TransactionForm({ user, getTransactions, getTransactionsTotal, getTransactionsMonthlyTotal }) {
     const current = new Date();
     const [formData, setFormData] = useState({
         user: user,
@@ -24,6 +24,7 @@ export default function TransactionForm({ user, getTransactions, getTransactions
             });
             getTransactions();
             getTransactionsTotal();
+            getTransactionsMonthlyTotal();
         } catch (err) {
             console.error(err);
         }

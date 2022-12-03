@@ -14,3 +14,7 @@ export function getAll() {
 export function getTotal() {
   return sendRequest(`${BASE_URL}/total`);
 }
+
+export function getMonthlyTotal() {
+  return sendRequest(`${BASE_URL}/monthlytotal`);
+}

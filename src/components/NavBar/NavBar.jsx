@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 // images
 import logo from "../../img/logo.jpg";
 
-export default function NavBar({ month, user, menuClick, setMenuClick }) {
+export default function NavBar({ month, user, menuClick, setMenuClick, monthlyTotal }) {
   function getMonthText(month) {
     if (month === 0) {
       return 'January'
@@ -54,7 +54,7 @@ export default function NavBar({ month, user, menuClick, setMenuClick }) {
           <span></span>
           <span></span>
           <span></span>
-          <span className="spending">{getMonthText(month)}'s spending: $2000 </span>
+          <span className="spending">{getMonthText(month)}'s spending: <b>${monthlyTotal}</b> </span>
           {menuClick ? (
             <>
               <button onClick={()=>setMenuClick(false)} className="btn material-symbols-outlined">close</button>

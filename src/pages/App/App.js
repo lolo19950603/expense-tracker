@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
+import * as transactionsAPI from '../../utilities/api/transactions';
 
 // images
 // import background from "../../img/background.jpg";
@@ -28,15 +29,30 @@ export default function App() {
 
   const [menuClick, setMenuClick] = useState(false);
 
+  const [monthlyTotal, setMonthlyTotal] = useState(0);
+
   function handleLogOut() {
     userService.logOut();
     setUser(null);
     setMenuClick(false);
   }
 
+  useEffect(function() {
+    async function getTransactionsMonthlyTotal() {
+      const monthlyTotal = await transactionsAPI.getMonthlyTotal();
+      setMonthlyTotal(monthlyTotal);
+    }
+    getTransactionsMonthlyTotal();
+  }, []);
+
+  async function getTransactionsMonthlyTotal() {
+    const monthlyTotal = await transactionsAPI.getMonthlyTotal();
+    setMonthlyTotal(monthlyTotal);
+  }
+
   return (
     <main className="App">
-      <NavBar month={current.getMonth()} user={user} menuClick={menuClick} setMenuClick={setMenuClick}/>
+      <NavBar month={current.getMonth()} user={user} menuClick={menuClick} setMenuClick={setMenuClick} monthlyTotal={monthlyTotal} />
       {menuClick ? (
         <div className="menu">
           <Link className="menu-item" to="" onClick={handleLogOut}>Log Out</Link>
@@ -52,7 +68,7 @@ export default function App() {
           <>
             <Routes>
               {/* Route components in here */}
-              <Route path="/" element={<AccountPage user={user} date={current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]}/>} />
+              <Route path="/" element={<AccountPage getTransactionsMonthlyTotal={getTransactionsMonthlyTotal} user={user} date={current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]}/>} />
               <Route path="/year" element={<YearPage />} />
               <Route path="/month" element={<MonthPage />} />
             </Routes>
