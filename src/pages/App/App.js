@@ -10,8 +10,6 @@ import * as transactionsAPI from '../../utilities/api/transactions';
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../SignupPage/SignupPage";
 import AccountPage from "../AccountPage/AccountPage";
-import YearPage from "../YearPage/YearPage";
-import MonthPage from "../MonthPage/MonthPage";
 
 // Components
 import NavBar from "../../components/NavBar/NavBar";
@@ -67,8 +65,6 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<AccountPage getTransactionsMonthlyTotal={getTransactionsMonthlyTotal} user={user} date={current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]}/>} />
-              <Route path="/year" element={<YearPage />} />
-              <Route path="/month" element={<MonthPage />} />
             </Routes>
           </>
         ) : (
