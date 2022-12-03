@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function TransactionLineItem({ transaction }) {
   return (
     <div className="transactions_display">

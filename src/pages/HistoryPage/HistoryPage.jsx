@@ -9,7 +9,7 @@ export default function HistoryPage({ date }) {
       const transactions = await transactionsAPI.getAllTime();
       var newTransactions = transactions.filter(function (transaction) {
         const dateList = date.split('-');
-        return transaction.date == `${parseInt(dateList[1])}/${parseInt(dateList[2])}/${dateList[0]}`;
+        return transaction.date === `${parseInt(dateList[1])}/${parseInt(dateList[2])}/${dateList[0]}`;
       });
       setTransactions(newTransactions);
     }

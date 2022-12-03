@@ -15,7 +15,7 @@ export default function TransactionForm({ user, getTransactions, getTransactions
         // the state.
         e.preventDefault();
         try {
-            const {transaction} = await transactionsAPI.create(formData);
+            await transactionsAPI.create(formData);
             setFormData({
                 user: user,
                 description: '',
