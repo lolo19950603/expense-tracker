@@ -14,7 +14,7 @@ export default function HistoryPage({ date }) {
       setTransactions(newTransactions);
     }
     getTransactions();
-  }, []);
+  }, [date]);
 
   return (
     <div className="daily-summary">
