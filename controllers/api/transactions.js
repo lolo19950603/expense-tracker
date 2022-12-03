@@ -30,8 +30,18 @@ async function index(req, res) {
     res.json(transactions);
   }
   
+  async function total (req, res, next){
+    const current = new Date();
+    const transactions = await Transaction.find({user: req.user, date:current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]});
+    let total = 0;
+    transactions.map((transaction, idx) => (
+        total += transaction.amount
+      ))
+    res.json(total);
+}
 
 module.exports = {
     create,
-    index
+    index,
+    total
 }

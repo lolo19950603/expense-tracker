@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import * as transactionsAPI from '../../utilities/api/transactions';
 
-export default function TransactionForm({ user, getTransactions }) {
+export default function TransactionForm({ user, getTransactions, getTransactionsTotal }) {
     const current = new Date();
     const [formData, setFormData] = useState({
         user: user,
@@ -23,6 +23,7 @@ export default function TransactionForm({ user, getTransactions }) {
                 date: current.toLocaleString('en-US', { timeZone: 'America/New_York' }).split(",")[0]
             });
             getTransactions();
+            getTransactionsTotal();
         } catch (err) {
             console.error(err);
         }

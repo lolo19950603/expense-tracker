@@ -10,3 +10,7 @@ export function create(transactionData) {
 export function getAll() {
   return sendRequest(BASE_URL);
 }
+
+export function getTotal() {
+  return sendRequest(`${BASE_URL}/total`);
+}
