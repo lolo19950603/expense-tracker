@@ -11,6 +11,10 @@ export function getAll() {
   return sendRequest(BASE_URL);
 }
 
+export function getAllTime() {
+  return sendRequest(`${BASE_URL}/alltime`);
+}
+
 export function getTotal() {
   return sendRequest(`${BASE_URL}/total`);
 }

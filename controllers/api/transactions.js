@@ -35,6 +35,11 @@ async function index(req, res) {
   res.json(transactions);
 }
 
+async function allTime(req, res) {
+  const transactions = await Transaction.find({user: req.user});
+  res.json(transactions);
+}
+
 async function total(req, res, next) {
   const current = new Date();
   const transactions = await Transaction.find({
@@ -68,6 +73,7 @@ async function monthlyTotal(req, res, next) {
 module.exports = {
   create,
   index,
+  allTime,
   total,
   monthlyTotal,
 };

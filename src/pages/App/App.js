@@ -55,10 +55,8 @@ export default function App() {
       <NavBar month={current.getMonth()} user={user} menuClick={menuClick} setMenuClick={setMenuClick} monthlyTotal={monthlyTotal} />
       {menuClick ? (
         <div className="menu">
+          <Link className="menu-item" to="" onClick={() => {setMenuClick(false)}}>Home</Link>
           <Link className="menu-item" to="" onClick={handleLogOut}>Log Out</Link>
-          <Link className="menu-item" to="" onClick={() => {setMenuClick(false)}}>Fake btn</Link>
-          <Link className="menu-item" to="" onClick={() => {setMenuClick(false)}}>Fake btn</Link>
-          <Link className="menu-item" to="" onClick={() => {setMenuClick(false)}}>Fake btn</Link>
         </div>
       ) : (
         <></>
