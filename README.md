@@ -1,31 +1,101 @@
-# MERN-Stack Infrastructure
+<br />
+<div align="center">
+  <a href="https://github.com/lolo19950603/expense-tracker">
+    <img src="public/logo.jpg" alt="Logo" width="200">
+  </a>
+    <br />
+    <br />
+<h1 align="center">Expense Tracker</h1>
+  <p align="center">
+    <a href="https://github.com/lolo19950603/expense-tracker"><strong>< Link to repo ></strong></a>
+    <a href="https://expense-tracker-production-6f0d.up.railway.app/"><strong>< Link to app ></strong></a>
+</div>
 
-Clone this repo to provide the starter code for a comprehensive MERN-Stack project including token-based authentication.
+<!-- TABLE OF CONTENTS -->
+<div>
+  <h2>Table of Contents</h2>
+  <ol>
+    <li>
+      <a href="#about-the-project">About</a>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#issues">Issues or Enhancements</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</div>
 
-Here's the process to create a new MERN-Stack project that starts with the infrastructure code:
+<!-- ABOUT -->
 
-1.) Clone the mern-infrastructure repo: `git clone <url of mern-infrastructure> <name-of-project>`
+## About
 
-```
-Note that the folder created will be same as <name-of-project> instead of mern-infrastructure
-```
+<div align = 'center'>
+  <h2>THE PLAN BREAKDOWN</h2>
+  <br>
+  <img src="public/icebox.jpg" alt="Logo" width="300">
+  <br>
+  <img src="public/plan.jpg" alt="Logo" width="550" height="500">
+  <br>
+</div>
 
-2.) `cd <name-of-project>`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-3.) Install the Node modules: `npm i`
+### Built With
 
-4.) Create a .env (`touch .env`) and add entries for DATABASE_URL and SECRET
+- trello
+- github
+- visualstudio
+- javascript
+- react.js
 
-5.) Update the `"name": "mern-infrastructure"` in package.json to the name of your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-6.) Create a new repo on your personal GH account.
+<!-- ROADMAP -->
 
-7.) Copy the new GH repo's URL.
+## Roadmap
 
-8.) Update the remote's URL: `git remote set-url origin <paste the copied GH url>`
+- Registration Features (setting up the project)
+- Add transaction index list
+- Add transaction form
+- Add daily/monthly total spending
+- Add-History Tracker to see what your have spend in the past
 
-9.) Make the initial commit: `git add -A && git commit -m "Initial commit"`
+## Issues or Enhancements
 
-10.) Push for the first time: `git push -u origin main`
+- Issue - was having issue with useEffect where the componect is only rendered once but needs to be re-rendered when new form is submitted.
 
-1.) Have fun coding your new project and don't forget to make frequent commits!
+- Enhancement - didn't have time to implement the delete button.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTACT -->
+
+## Contact
+
+Loren Chen : [@Facebook](https://www.facebook.com/loren.chen1/) --- [@Linkedin](https://www.linkedin.com/in/loren-chen-6258b7125/) --- [@Twitter](https://twitter.com/Colton_Rennie90) --- loren840603@gmail.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+- [GeneralAssembly](https://generalassemb.ly/)
+- [Denis Dujota- Instructor @ GA](https://github.com/Dujota)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[trello.com]: https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white
+[trello-url]: https://trello.com/
+[github.com]: https://img.shields.io/badge/github-000000?style=for-the-badge&logo=github&logoColor=white
+[github-url]: https://github.com/
+[visualstudio.com]: https://img.shields.io/badge/visualstudiocode-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white
+[visualstudio-url]: https://code.visualstudio.com/
+[materializecss.com]: https://img.shields.io/badge/materializecss-ee6e73?style=for-the-badge&logo=monster&logoColor=white
+[materializecss-url]: https://materializecss.com/
+[djangoproject.com]: https://img.shields.io/badge/Django-092e20?style=for-the-badge&logo=Django&logoColor=white
+[django-url]: https://djangoproject.com/
+[python.org]: https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=Python&logoColor=white
+[python-url]: https://www.python.org/
+[javascript-url]: https://www.javascript.com/
